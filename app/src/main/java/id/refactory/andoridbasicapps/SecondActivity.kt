@@ -13,10 +13,7 @@ class SecondActivity : AppCompatActivity() {
 
 
         val btResult = findViewById<Button>(R.id.bt_result)
-        btResult.setOnClickListener {
-            startActivity(Intent(this, ResultActivity::class.java))
-//            intentTo(this,ResultActivity::class.java)
-        }
+        btResult.setOnClickListener {intentTo(ResultActivity::class.java)}
     }
 
 

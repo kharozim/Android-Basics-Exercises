@@ -14,9 +14,11 @@ class MainActivity : AppCompatActivity() {
 
         val btOne = findViewById<Button>(R.id.bt_one)
         val btTwo = findViewById<Button>(R.id.bt_two)
+        val btThree = findViewById<Button>(R.id.bt_three)
 
         btOne.setOnClickListener { intentTo(FirstActivity::class.java) }
         btTwo.setOnClickListener { intentTo(SecondActivity::class.java) }
+        btThree.setOnClickListener { intentTo(ThirdActivity::class.java) }
     }
 
 }
