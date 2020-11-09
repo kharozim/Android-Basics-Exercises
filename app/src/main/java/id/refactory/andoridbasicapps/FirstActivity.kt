@@ -1,5 +1,7 @@
 package id.refactory.andoridbasicapps
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,12 +18,9 @@ class FirstActivity : AppCompatActivity() {
         btGotoDetail.setOnClickListener {
 
             val text = etFirstAct.text.toString()
-
             val intent = Intent(this@FirstActivity, DetailActivity::class.java)
             intent.putExtra("text", text)
             startActivity(intent)
         }
-
-
     }
 }
