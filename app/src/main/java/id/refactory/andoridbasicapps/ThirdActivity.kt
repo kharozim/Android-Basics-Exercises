@@ -25,14 +25,18 @@ class ThirdActivity : AppCompatActivity() {
                 etUsername.text.toString().isEmailValid() && etPassword.text.toString().isPasswordValid() -> {
                     intentTo(HomeActivity::class.java)
                 }
+                etUsername.text.isEmpty() -> etUsername.setError("Email is empty")
                 etPassword.text.toString().length <= 8 -> {
-                    etPassword.text.clear()
+//                    etPassword.text.clear()
                     etPassword.setError("minimum password 8 character")
+                }
+                etPassword.text.matches(Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~\$^+=<>]).{8,20}\$")) == false -> {
+//                    etPassword.text.clear()
+                    etPassword.setError("Your password is not Alphanumeric")
                 }
             }
         }
     }
-
 
     private fun String.isPasswordValid(): Boolean {
         return !TextUtils.isEmpty(this) && this.matches(Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~\$^+=<>]).{8,20}\$"))
